@@ -1,0 +1,604 @@
+/* ============================================================
+   Simulating the Amazon Homepage Layout (CSS) — Assignment Brief
+   Student ID: 25532012   
+   Student Name: SHI Hau Yan
+   Date: 2026-10-08 
+   ============================================================ */
+
+/* --------------------------------------------
+   Universal reset: clear default inner and outer margins of every element
+   -------------------------------------------- */
+*{
+  margin:0;          /* remove outer margins */
+  padding:0;         /* remove inner paddings */
+}
+
+/* --------------------------------------------
+   Box model note: the page uses the default content-box sizing, 
+   so a floated box's rendered width is width + padding + border. 
+   Example: the search label is 100 + 10 (padding-left) + 1 (border-right) = 111px,
+   and the input is 589 + 20 (padding) = 609px;
+   111 + 609 = 720px, exactly filling the .search bar.
+   -------------------------------------------- */
+
+/* --------------------------------------------
+   DevBox: the outermost wrapper of the whole page.
+   -------------------------------------------- */
+.DevBox{
+  width:100%;          /* full page width */
+}
+
+/* --------------------------------------------
+   Page base: body background, text colour, font family and line height
+   -------------------------------------------- */
+body{
+  font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:#eaeded;   /* light grey page background */
+  color:#0f1111;        /* main text colour */
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* --------------------------------------------
+   Base link style: no underline, inherit the text colour
+   -------------------------------------------- */
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* --------------------------------------------
+   Base image style: display as block so it takes no extra line space
+   -------------------------------------------- */
+img{
+  display:block;
+  border:0;          /* remove default border on images */
+}
+
+/* --------------------------------------------
+   Container: fixed width, centred horizontally by margin: 0 auto.
+   Used by every fixed-width block of the page.
+   -------------------------------------------- */
+.container{
+  width:1400px;          /* page content width */
+  margin:0 auto;      /* horizontal centering */
+  padding:0 18px;
+}
+
+/* --------------------------------------------
+   Float clearing - method 1 (extra empty tag):
+   a clear:both tag put at the end of a floated parent
+   -------------------------------------------- */
+.clear{
+  clear:both;
+  height:0;
+  font-size:0;
+}
+
+/* --------------------------------------------
+   Float clearing - method 3 (double pseudo-element):
+   the .clearfix class applied to a floated parent
+   -------------------------------------------- */
+.clearfix::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+/* Empty placeholder where the logo used to be, keeps the original layout width */
+.logo-placeholder{float:left;width:128px;height:44px;}
+
+/* ============================================================
+   Block 1 - Top navigation bar:
+   full-width dark strip, inner content centred by margin: 0 auto.
+   Three groups are arranged horizontally with float:
+   delivery address (left), search bar (left),
+   account links (right).
+   ============================================================ */
+
+/* Top nav: the full-width dark background strip */
+.nav-top{
+  background:#131921;
+}
+
+/* Inner container of the top nav: fixed width and centred */
+.nav-inner{
+  width:1400px;          /* top nav inner width */
+  margin:0 auto;
+  padding:7px 18px;
+}
+
+/* Delivery address group: floated left beside the placeholder */
+.deliver{
+  float:left;
+  margin:7px 0 0 6px;
+  padding:5px 7px;
+  border:1px solid transparent;
+  border-radius:2px;
+  color:#cccccc;
+}
+.deliver:hover{
+  border-color:#ffffff;
+}
+.deliver .text{
+  float:left;
+  margin-left:3px;
+}
+.deliver small{
+  display:block;
+  font-size:11px;
+  line-height:1;
+}
+.deliver b{
+  display:block;
+  font-size:13px;
+  color:#ffffff;
+  font-weight:700;
+  line-height:1.3;
+}
+
+/* Search bar group: floated left, fixed width, height 40px.
+   overflow:hidden clears the internal floats (category label / input)
+   and clips the rounded corners. */
+.search{
+  float:left;
+  width:720px;           /* search bar width */
+  height:40px;
+  margin:5px 16px 0;   /* 5px top offset, 16px left/right gap inside the nav */
+  border-radius:4px;
+  overflow:hidden;        /* also used as a float clearing method */
+}
+.search .cat-label{
+  float:left;
+  width:100px;           /* category label width */
+  height:40px;
+  line-height:40px;      /* centre the text vertically in the 40px bar */
+  border:0;
+  border-right:1px solid #cdcdcd;
+  background:#e6e6e6;
+  color:#555555;
+  font-size:12px;
+  font-family:inherit;
+  padding-left:10px;
+}
+.search input{
+  float:left;
+  width:589px;            /* search box width: 111 (label) + 609 (input+padding) = 720px */
+  height:40px;
+  border:0;
+  padding:0 10px;
+  font-size:15px;
+  font-family:inherit;
+}
+
+/* Account links group on the right, floated right */
+.nav-right{
+  float:right;
+  width:380px;
+  height:45px;          /* match the header content height */
+  text-align:right;     /* keep the four items on the right */
+  white-space:nowrap;
+}
+
+/* A single account link item, inline-block inside the right group */
+.nav-item{
+  display:inline-block;
+  vertical-align:middle;
+  margin-left:4px;
+  padding:6px 8px;
+  border:1px solid transparent;
+  border-radius:2px;
+  color:#cccccc;
+}
+.nav-item:hover{
+  border-color:#ffffff;   /* white border on hover */
+}
+.nav-item small{
+  display:block;
+  font-size:11px;
+  line-height:1;
+  text-align:left;      /* force left-align the short top line */
+}
+.nav-item b{
+  display:block;
+  font-size:13px;
+  color:#ffffff;
+  font-weight:700;
+  line-height:1.3;
+  text-align:left;      /* keep the bottom line left-aligned */
+}
+
+/* Language switcher (ZH) inside the right group */
+.nav-item .zh{
+  font-size:13px;
+  color:#ffffff;
+  font-weight:700;
+  line-height:1.5;
+}
+.nav-item .acct{
+  display:block;
+}
+.nav-item .acct b{
+  display:inline;
+}
+/* Cart group: inline-block link item */
+.cart-link{
+  display:inline-block;
+  vertical-align:middle;
+  margin-left:4px;
+  padding:6px 8px;
+  border:1px solid transparent;
+  border-radius:2px;
+  color:#ffffff;
+}
+.cart-link:hover{
+  border-color:#ffffff;   /* white border on hover */
+}
+.cart-link .ct{
+  display:inline-block;
+  vertical-align:middle;
+  margin:0 0 0 4px;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+/* ============================================================
+   Block 2 - Secondary navigation bar:
+   full-width dark strip with category links floated left
+   and the English-shop link floated right.
+   ============================================================ */
+
+.nav-sub{
+  background:#232f3e;
+}
+
+/* Inner container of the secondary nav: fixed width and centred */
+.nav-sub-inner{
+  width:1400px;          /* secondary nav inner width */
+  margin:0 auto;
+  padding:0 18px;
+  height:39px;
+}
+/* Category links: floated left, white text on the dark strip */
+.nav-sub a{
+  float:left;
+  padding:10px 10px;
+  border:1px solid transparent;
+  border-radius:2px;
+  color:#ffffff;
+  font-size:13px;
+}
+.nav-sub a:hover{
+  border-color:#ffffff;   /* white border on hover */
+}
+.nav-sub .english{
+  float:right;           /* English-shop link aligned to the right */
+  color:#dddddd;
+}
+
+/* ============================================================
+   Block 3 - Main content area
+   ============================================================ */
+
+/* Main area: top padding only */
+main{
+  padding:20px 0 0;
+}
+
+/* --------------------------------------------
+   Row A - five colour category tiles.
+   The tiles are arranged horizontally with float:left,
+   each taking 19% of the container width plus a 1.25% gap.
+   overflow:hidden on the parent clears the floated tiles.
+   -------------------------------------------- */
+.row5{
+  overflow:hidden;
+  margin-bottom:20px;
+}
+.tile{
+  float:left;
+  width:19%;             /* one of five tiles across the row */
+  margin-right:1.25%;     /* gap between two tiles */
+  border-radius:4px;
+}
+.tile.last{
+  margin-right:0;         /* the last tile needs no right margin */
+}
+/* White bold title placed on the colour tile */
+.tile h3{
+  font-size:15px;
+  font-weight:700;
+  color:#ffffff;
+  padding:14px 14px 8px;
+  line-height:1.3;
+}
+.tile img{
+  width:100%;   /* image fills the tile width */
+  height:auto;  /* keep the aspect ratio */
+}
+/* tile background colours, one for each category */
+.tile-b1{background:#cad6d2;}
+.tile-b2{background:#fbc7bc;}
+.tile-b3{background:#cdc3ba;}
+.tile-b4{background:#afcbf0;}
+.tile-b5{background:#f2c9e9;}
+
+/* --------------------------------------------
+   Row of four white cards (used by rows B, C, D, E, F, G).
+   The cards are floated left, each taking 24% of the width
+   plus a 1.333% gap; the parent clears the floats.
+   -------------------------------------------- */
+.row4{
+  overflow:hidden;
+  margin-bottom:20px;
+}
+.card{
+  float:left;
+  width:24%;             /* one of four cards across the row */
+  margin-right:1.333%;    /* gap between two cards */
+  background:#ffffff;
+  border-radius:4px;
+}
+.card.last{
+  margin-right:0;
+}
+/* Card title: larger bold text with top padding */
+.card h3{
+  font-size:16px;
+  font-weight:700;
+  line-height:1.3;
+  padding:16px 18px 0;
+}
+.card h3 a:hover{
+  color:#007185;          /* link turns blue on hover */
+}
+/* 2 by 2 thumbnail layout inside a card.
+   The four thumbnails are floated left two per row;
+   overflow:hidden clears the floats. */
+.card-thumbs{
+  margin:12px 18px 14px;
+  overflow:hidden;
+}
+.thumb{
+  float:left;
+  width:48%;             /* one of two thumbnails per row */
+  margin-right:4%;        /* gap between the two columns */
+}
+.thumb.last{
+  margin-right:0;
+}
+.thumb .img{
+  background:#f3f3f3;
+  border-radius:4px;
+  overflow:hidden;
+}
+.thumb img{
+  width:100%;   /* image fills the thumbnail width */
+  height:auto;  /* keep the aspect ratio */
+}
+.thumb span{
+  display:block;
+  font-size:12px;
+  margin-top:5px;
+  text-align:left;
+}
+.thumb:hover span{
+  color:#007185;   /* link blue on hover */
+}
+
+/* --------------------------------------------
+   Sign-in banner: a white card centred by margin: 0 auto.
+   Normal flow is used because the banner is a single vertically arranged block.
+   -------------------------------------------- */
+.signin{
+  width:820px;           /* sign-in banner width */
+  margin:10px auto 20px;  /* margin: 0 auto horizontal centering */
+  background:#ffffff;
+  border-radius:4px;
+  text-align:center;
+  padding:26px 24px;
+}
+/* Banner heading: bold and centred */
+.signin h2{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.signin .btn-login{
+  display:inline-block;   /* inline-block button inside centred text */
+  width:240px;
+  background:#ffd814;
+  border:1px solid #fcd200;
+  color:#0f1111;
+  font-size:14px;
+  font-weight:600;
+  border-radius:8px;
+  padding:9px 0;
+}
+.signin .btn-login:hover{
+  background:#f7ca00;   /* slightly darker yellow on hover */
+}
+.signin .signup-line{
+  margin-top:12px;
+  color:#0f1111;          /* "New customer?" text stays dark, not blue */
+  font-size:13px;
+}
+.signin .signup-link{
+  color:#007185;          /* only the "register" link is blue */
+}
+.signin .signup-link:hover{
+  color:#c7511f;
+  text-decoration:underline;
+}
+
+/* ============================================================
+   Block 4 - Back-to-top link:
+   a full-width strip, normal flow, text centred
+   ============================================================ */
+
+.back-top{
+  display:block;
+  text-align:center;
+  background:#37475a;
+  color:#ffffff;
+  font-size:13px;
+  padding:15px 0;
+}
+.back-top:hover{
+  background:#485769;   /* slightly lighter on hover */
+}
+
+/* ============================================================
+   Block 5 - Footer
+   ============================================================ */
+
+/* --------------------------------------------
+   Footer columns: four link columns floated left inside a 964px container.
+   -------------------------------------------- */
+.footer-cols{
+  background:#232f3e;
+  padding:42px 0 34px;
+}
+.footer-cols .container{
+  width:964px;            /* override the base container width */
+  overflow:hidden;        /* clear the floated columns */
+}
+.footer-cols .col{
+  float:left;
+  width:24%;             /* one of four link columns */
+  margin-right:1.333%;
+}
+.footer-cols .col.last{
+  margin-right:0;
+}
+/* Column heading: white bold text */
+.footer-cols h4{
+  color:#ffffff;
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.footer-cols ul{
+  list-style:none;
+}
+.footer-cols li{
+  margin-bottom:4px;
+}
+.footer-cols a{
+  color:#dddddd;
+  font-size:13px;
+  line-height:1.8;
+}
+.footer-cols a:hover{
+  text-decoration:underline;
+}
+
+/* --------------------------------------------
+   Language / currency / region bar:
+   the three option boxes are floated right; 
+   the whole inner container is centred by margin: 0 auto.
+   -------------------------------------------- */
+.footer-global{
+  background:#232f3e;
+  border-top:1px solid #3a4553;
+  padding:16px 0 30px;
+}
+.global-inner{
+  width:600px;           /* three options total width */
+  margin:0 auto;          /* margin: 0 auto centering */
+  padding:0 18px;
+  overflow:hidden;        /* clear the floated options */
+}
+.g-options{
+  float:right;
+}
+.g-opt{
+  float:left;
+  margin-left:10px;
+  padding:8px 16px;
+  border:1px solid #848688;
+  border-radius:3px;
+  color:#cccccc;
+  font-size:14px;
+}
+.g-opt:hover{
+  border-color:#ffffff;   /* white border and text on hover */
+  color:#ffffff;
+}
+
+/* --------------------------------------------
+   Service links matrix: three rows of seven items plus one row of four items, built with floats.
+   Each row is wrapped in its own .fs-row container so
+   overflow:hidden clears the floats row by row and the next row always starts at the left edge.
+   Every item is floated left at 13% width like one column of the seven-column layout.
+   -------------------------------------------- */
+.footer-services{
+  background:#131a22;
+  padding:32px 0 26px;
+}
+.fs-matrix{
+  width:1000px;          /* services matrix width */
+  margin:0 auto;
+  padding:0 18px;
+}
+.fs-row{
+  overflow:hidden;        /* clear the floated items of this row */
+  margin-bottom:26px;     /* vertical gap between two rows */
+}
+.fs-row.alt{
+  margin-bottom:0;
+}
+.fs-item{
+  float:left;
+  width:13%;             /* one of seven columns */
+  margin-right:1.5%;      /* gap between two columns */
+}
+.fs-item.last{
+  margin-right:0;
+}
+/* The four-item row is shifted right by one column:
+   a left margin equal to one column width plus its gap */
+.fs-row.alt .fs-item.first{
+  margin-left:14.5%;      /* offset of one column, so the row starts at column 2 */
+}
+.fs-item b{
+  display:block;
+  color:#ffffff;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:3px;
+}
+.fs-item p{
+  color:#999999;
+  font-size:12px;
+  line-height:1.6;
+}
+.fs-item a:hover b{
+  text-decoration:underline;
+}
+
+/* --------------------------------------------
+   Legal links and copyright:
+   normal flow, text centred, links kept inline
+   -------------------------------------------- */
+.footer-legal{
+  background:#131a22;
+  padding:16px 0 34px;
+  text-align:center;
+}
+.footer-legal a{
+  color:#dddddd;
+  font-size:12px;
+  margin:0 9px;           /* space between legal links */
+}
+.footer-legal a:hover{
+  text-decoration:underline;
+}
+/* Copyright line: small grey text below the links */
+.footer-legal .copy{
+  margin-top:8px;
+  color:#dddddd;
+  font-size:12px;
+}
+

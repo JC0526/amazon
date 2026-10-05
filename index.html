@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<!--
+Simulating the Amazon Homepage Layout (HTML) — Assignment Brief
+Student ID: 25532012
+Student Name: SHI Hau Yan
+Date: 2026-10-08
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon.com. Spend less. Smile more.</title>
+<!-- External stylesheet: the CSS file lives in the css folder -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+<!-- DevBox: the outermost wrapper of the whole page -->
+<div class="DevBox">
+
+<!-- Top navigation bar: full-width dark strip with delivery address, search bar and account links floated horizontally, the inner content is centred -->
+<header class="nav-top">
+  <!-- Inner wrapper: applies clearfix (float clearing method 3) so the floated children stay inside -->
+    <div class="nav-inner clearfix">
+    <!-- Logo group: floated left (logo removed, keep placeholder width) -->
+    <div class="logo-placeholder"></div>
+    <!-- /Logo group -->
+
+    <!-- Delivery address group: floated left, shows where orders are delivered -->
+    <a href="#" class="deliver">
+
+      <span class="text">
+        <small>配送至</small>
+        <b>香港</b>
+      </span>
+    </a>
+    <!-- /Delivery address group -->
+
+    <!-- Search bar group: floated left with a category label and an input box -->
+    <div class="search">
+      <span class="cat-label">全部分类</span>
+      <input type="text" placeholder="搜索 Amazon" aria-label="Search Amazon">
+    </div>
+    <!-- /Search bar group -->
+
+    <!-- Account links group: floated right with language, sign-in, orders and cart links -->
+    <div class="nav-right">
+      <a href="#" class="nav-item">
+        <span class="zh">ZH</span>
+      </a>
+      <a href="#" class="nav-item">
+        <small>您好，登录</small>
+        <span class="acct"><b>账户及心愿单</b></span>
+      </a>
+      <a href="#" class="nav-item">
+        <small>退货</small>
+        <b>与我的订单</b>
+      </a>
+      <a href="#" class="cart-link">
+        <span class="ct">购物车</span>
+      </a>
+    </div>
+    <!-- /Account links group -->
+  </div>
+</header>
+<!-- /Top navigation bar -->
+
+<!-- Secondary navigation bar: full-width dark strip with category links floated left and the English-shop link floated right -->
+<nav class="nav-sub">
+  <div class="nav-sub-inner">
+    <a href="#" class="burger">全部</a>
+    <a href="#">Prime Video</a>
+    <a href="#">优惠券</a>
+    <a href="#">客户服务</a>
+    <a href="#">今日特价</a>
+    <a href="#">礼品心愿单</a>
+    <a href="#">礼品卡</a>
+    <a href="#">全球开店</a>
+    <a href="#" class="english">Click here to shop in English</a>
+    <!-- Float clearing - method 1: an extra empty tag that clears both sides -->
+    <div class="clear"></div>
+  </div>
+</nav>
+<!-- /Secondary navigation bar -->
+
+<!-- Main content area: seven product rows plus a sign-in banner, arranged vertically by normal flow -->
+<main>
+
+  <!-- Row A: five colour category tiles arranged horizontally with float -->
+  <section class="container row5" aria-label="Hot categories">
+    <a href="#" class="tile tile-b1">
+      <h3>厨房必备品</h3>
+      <img src="img/rowa_kitchen.jpg" alt="Kitchen essentials">
+    </a>
+    <a href="#" class="tile tile-b2">
+      <h3>所有美妆用品</h3>
+      <img src="img/rowa_beauty.jpg" alt="All beauty products">
+    </a>
+    <a href="#" class="tile tile-b3">
+      <h3>开始焕发精神</h3>
+      <img src="img/rowa_spirit.jpg" alt="Start refreshing">
+    </a>
+    <a href="#" class="tile tile-b4">
+      <h3>小孩子的玩具</h3>
+      <img src="img/rowa_toys.jpg" alt="Kids toys">
+    </a>
+    <a href="#" class="tile tile-b5 last">
+      <h3>在这里为你的电脑升级</h3>
+      <img src="img/rowa_pc.jpg" alt="Upgrade your PC">
+    </a>
+  </section>
+  <!-- /Row A -->
+
+  <!-- Row B: four white cards, each with a 2 by 2 thumbnail layout (electronics and fashion) -->
+  <section class="container row4" aria-label="Electronics and fashion">
+    <div class="card">
+      <h3><a href="#">用我们的电子产品插上电源</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowb_headphones.jpg" alt="Headphones"></span><span>耳机</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowb_tablet.jpg" alt="Tablets"></span><span>平板电脑</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowb_game.jpg" alt="Games"></span><span>游戏</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowb_speaker.jpg" alt="Speakers"></span><span>扬声器</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">为最佳电脑和配件打分</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowb_desktop.jpg" alt="Desktops"></span><span>台式机</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowb_laptop.jpg" alt="Laptops"></span><span>笔记本电脑</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowb_hdd.jpg" alt="Hard drives"></span><span>硬盘驱动器</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowb_pcparts.jpg" alt="PC parts"></span><span>电脑配件</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">买好装备锻炼身体</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowb_apparel.jpg" alt="Apparel"></span><span>服饰</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowb_tracker.jpg" alt="Trackers"></span><span>追踪器</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowb_appliance.jpg" alt="Appliances"></span><span>器具</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowb_fitness.jpg" alt="Fitness deals"></span><span>健身特价商品</span></a>
+      </div>
+    </div>
+    <div class="card last">
+      <h3><a href="#">低于25美元的服装</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowb_women.jpg" alt="Women"></span><span>女式</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowb_men.jpg" alt="Men"></span><span>男式</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowb_girls.jpg" alt="Girls"></span><span>女童</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowb_boys.jpg" alt="Boys"></span><span>男童</span></a>
+      </div>
+    </div>
+  </section>
+  <!-- /Row B -->
+
+  <!-- Row C: four white cards, each with a 2 by 2 thumbnail layout (home, fashion, beauty and tech) -->
+  <section class="container row4" aria-label="Home and beauty">
+    <div class="card">
+      <h3><a href="#">神奇的家居发现</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowc_kitchenware.jpg" alt="Kitchenware"></span><span>厨房用品</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowc_homedecor.jpg" alt="Home decor"></span><span>家居装饰</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowc_dining.jpg" alt="Dining"></span><span>餐饮</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowc_smarthome.jpg" alt="Smart home"></span><span>智能家居</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">选择您最喜欢的时尚单品，绽放更多光彩</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowc_jewelry.jpg" alt="Jewelry"></span><span>珠宝首饰</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowc_handbag.jpg" alt="Handbags"></span><span>手提包</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowc_shoes.jpg" alt="Shoes"></span><span>鞋靴</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowc_beauty.jpg" alt="Beauty"></span><span>美妆</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">绽放您的光彩</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowc_haircare.jpg" alt="Hair care"></span><span>护发</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowc_perfume.jpg" alt="Perfume"></span><span>香水</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowc_cosmetics.jpg" alt="Cosmetics"></span><span>化妆品</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowc_skincare.jpg" alt="Skin care"></span><span>皮肤护理</span></a>
+      </div>
+    </div>
+    <div class="card last">
+      <h3><a href="#">在这里为你的电脑升级</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowc_laptop.jpg" alt="Laptops"></span><span>笔记本电脑</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowc_pc.jpg" alt="Personal computers"></span><span>个人计算机</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowc_hdd.jpg" alt="Hard drives"></span><span>硬盘驱动器</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowc_monitor.jpg" alt="Monitors"></span><span>显示器</span></a>
+      </div>
+    </div>
+  </section>
+  <!-- /Row C -->
+
+  <!-- Row D: four white cards with 2 by 2 thumbnail layouts (home, shoes, pets and family) -->
+  <section class="container row4" aria-label="Home and pets">
+    <div class="card">
+      <h3><a href="#">居家和谐</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowd_kitchen.jpg" alt="Kitchen essentials"></span><span>厨房必需品</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowd_homecomfort.jpg" alt="Home comfort"></span><span>居家舒适</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowd_elegant.jpg" alt="Elegant decor"></span><span>优雅风格装饰</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowd_shine.jpg" alt="Shine bright"></span><span>照亮您的美</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">低于50美元的鞋靴</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowd_women.jpg" alt="Women"></span><span>女式</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowd_men.jpg" alt="Men"></span><span>男式</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowd_girls.jpg" alt="Girls"></span><span>女童</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowd_boys.jpg" alt="Boys"></span><span>男童</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">需要给毛茸茸的朋友买什么</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowd_dog.jpg" alt="Dogs"></span><span>狗</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowd_cat.jpg" alt="Cats"></span><span>猫</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowd_pet.jpg" alt="Small pets"></span><span>小宠物</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowd_petsale.jpg" alt="Pet deals"></span><span>宠物特价商品</span></a>
+      </div>
+    </div>
+    <div class="card last">
+      <h3><a href="#">与家人共享更多乐趣</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowd_outdoortoys.jpg" alt="Outdoor toy sets"></span><span>户外玩具套装</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowd_learningtoys.jpg" alt="Learning toys"></span><span>学习玩具</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowd_actionfig.jpg" alt="Action figures"></span><span>动作玩偶</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowd_costume.jpg" alt="Costumes"></span><span>装扮玩具</span></a>
+      </div>
+    </div>
+  </section>
+  <!-- /Row D -->
+
+  <!-- Row E: four white cards with 2 by 2 thumbnail layouts (home essentials and new arrivals) -->
+  <section class="container row4" aria-label="Home essentials">
+    <div class="card">
+      <h3><a href="#">家居必备物品</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowe_sheet.jpg" alt="Bed sheets"></span><span>床单</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowe_pillow.jpg" alt="Pillows"></span><span>枕头</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowe_duvet.jpg" alt="Duvet covers"></span><span>Duvet 涵盖</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowe_throws.jpg" alt="Throws"></span><span>Throws</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">热门类别的优惠</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowe_book.jpg" alt="Books"></span><span>图书</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowe_fashion.jpg" alt="Fashion"></span><span>时装</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowe_pc.jpg" alt="Personal computers"></span><span>个人计算机</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowe_beauty.jpg" alt="Beauty"></span><span>美妆</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">$50 以下的新上线家居新品</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowe_kitchendining.jpg" alt="Kitchen and dining"></span><span>厨房和餐厅用品</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowe_renovation.jpg" alt="Home renovation"></span><span>家居装修</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowe_decor.jpg" alt="Decor"></span><span>装饰</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowe_bath.jpg" alt="Bed and bath"></span><span>床上用品和洗浴用品</span></a>
+      </div>
+    </div>
+    <div class="card last">
+      <h3><a href="#">为您的生活增光添彩</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowe_accessory.jpg" alt="Fashion accessories"></span><span>时尚配饰</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowe_menacc.jpg" alt="Men's accessories"></span><span>男士配饰</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowe_health.jpg" alt="Health and beauty"></span><span>健康和美容</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowe_sports.jpg" alt="Sports"></span><span>运动</span></a>
+      </div>
+    </div>
+  </section>
+  <!-- /Row E -->
+
+  <!-- Row F: four white cards with 2 by 2 thumbnail layouts (fashion, beauty, audio-visual and living space) -->
+  <section class="container row4" aria-label="Fashion and audio-visual">
+    <div class="card">
+      <h3><a href="#">走向时尚</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowf_womenswear.jpg" alt="Women's wear"></span><span>女装</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowf_womenshoes.jpg" alt="Women's shoes"></span><span>女鞋</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowf_menswear.jpg" alt="Men's wear"></span><span>男装</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowf_menshoes.jpg" alt="Men's shoes"></span><span>男鞋</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">提升您的美容护肤程序</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowf_cosmetics.jpg" alt="Cosmetics"></span><span>化妆品</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowf_brush.jpg" alt="Brushes"></span><span>刷子</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowf_sponge.jpg" alt="Sponges"></span><span>海绵</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowf_mirror.jpg" alt="Mirrors"></span><span>镜子</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">精选家庭影院</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowf_tv.jpg" alt="TV sets"></span><span>电视机</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowf_speaker.jpg" alt="Speakers"></span><span>扬声器</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowf_soundbar.jpg" alt="Sound bars"></span><span>条形音箱</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowf_projector.jpg" alt="Projectors"></span><span>投影仪</span></a>
+      </div>
+    </div>
+    <div class="card last">
+      <h3><a href="#">精心打造您的空间</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowf_candle.jpg" alt="Candles"></span><span>蜡烛</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowf_fashionpillow.jpg" alt="Fashion pillows"></span><span>时尚枕头</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowf_garden.jpg" alt="Indoor gardening"></span><span>室内园艺</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowf_storage.jpg" alt="Storage"></span><span>储存收纳</span></a>
+      </div>
+    </div>
+  </section>
+  <!-- /Row F -->
+
+  <!-- Row G: four white cards with 2 by 2 thumbnail layouts (seasonal, PC, books and games) -->
+  <section class="container row4" aria-label="Books and games">
+    <div class="card">
+      <h3><a href="#">在这个季节展现您最好的一面</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowg_women.jpg" alt="For women"></span><span>适合女士</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowg_men.jpg" alt="For men"></span><span>适合男士</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowg_teens.jpg" alt="For teens"></span><span>适合青少年</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowg_kids.jpg" alt="For kids"></span><span>适合儿童</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">打造您自己的电脑</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowg_cpu.jpg" alt="Processors"></span><span>处理器</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowg_motherboard.jpg" alt="Motherboards"></span><span>主板</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowg_power.jpg" alt="Power supplies"></span><span>电源</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowg_cooling.jpg" alt="Cooling"></span><span>冷却</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><a href="#">拿起就舍不得放下的书</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/book_quantum.jpg" alt="Children's books"></span><span>儿童</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/book_haunting.jpg" alt="Mystery books"></span><span>神秘</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/book_wedding.jpg" alt="Fiction"></span><span>小说</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/book_goodenergy.jpg" alt="Inspirational books"></span><span>励志</span></a>
+      </div>
+    </div>
+    <div class="card last">
+      <h3><a href="#">游戏商品</a></h3>
+      <div class="card-thumbs">
+        <a href="#" class="thumb"><span class="img"><img src="img/rowg_clothing.jpg" alt="Clothing"></span><span>服装</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowg_hat.jpg" alt="Hats"></span><span>帽子</span></a>
+        <a href="#" class="thumb"><span class="img"><img src="img/rowg_figurine.jpg" alt="Action figures"></span><span>可动人偶</span></a>
+        <a href="#" class="thumb last"><span class="img"><img src="img/rowg_mug.jpg" alt="Mugs and cups"></span><span>马克杯、咖啡杯</span></a>
+      </div>
+    </div>
+  </section>
+  <!-- /Row G -->
+
+  <!-- Sign-in banner: a white card centred by margin: 0 auto, arranged vertically by normal flow -->
+  <section class="container">
+    <div class="signin">
+      <h2>查看个性化推荐</h2>
+      <a href="#" class="btn-login">立即登录</a>
+      <p class="signup-line">新客户？<a href="#" class="signup-link">免费注册</a></p>
+    </div>
+  </section>
+  <!-- /Sign-in banner -->
+
+</main>
+<!-- /Main content area -->
+
+<!-- Back-to-top link: a full-width strip in normal flow, centred text -->
+<a href="#top" class="back-top">回到顶部</a>
+<!-- /Back-to-top link -->
+
+<!-- Footer: four blocks arranged vertically by normal flow -->
+<footer>
+
+  <!-- Footer link columns: four columns floated left inside a 964px container -->
+  <div class="footer-cols">
+    <div class="container">
+      <div class="col">
+        <h4>了解我们</h4>
+        <ul>
+          <li><a href="#">人才招聘</a></li>
+          <li><a href="#">博客</a></li>
+          <li><a href="#">关于亚马逊</a></li>
+          <li><a href="#">投资者关系</a></li>
+          <li><a href="#">亚马逊设备</a></li>
+          <li><a href="#">亚马逊科学</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>合作信息</h4>
+        <ul>
+          <li><a href="#">我要开店</a></li>
+          <li><a href="#">在亚马逊企业购开店</a></li>
+          <li><a href="#">在亚马逊上销售您的应用程序</a></li>
+          <li><a href="#">加入联盟</a></li>
+          <li><a href="#">我要推广</a></li>
+          <li><a href="#">自行出版</a></li>
+          <li><a href="#">托管亚马逊中心</a></li>
+          <li><a href="#">›查看“合作信息”的更多内容</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>亚马逊支付服务商品</h4>
+        <ul>
+          <li><a href="#">使用积分购物</a></li>
+          <li><a href="#">账户充值</a></li>
+          <li><a href="#">亚马逊货币计算器</a></li>
+        </ul>
+      </div>
+      <div class="col last">
+        <h4>帮助中心和购物指南</h4>
+        <ul>
+          <li><a href="#">我的账户</a></li>
+          <li><a href="#">我的订单</a></li>
+          <li><a href="#">发货与配送</a></li>
+          <li><a href="#">退货与换货</a></li>
+          <li><a href="#">管理我的内容和设备</a></li>
+          <li><a href="#">帮助中心</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /Footer link columns -->
+
+  <!-- Language, currency and region bar: the three option boxes are floated right, and the whole group is centred by margin: 0 auto -->
+  <div class="footer-global">
+    <div class="global-inner">
+
+      <div class="g-options">
+        <a href="#" class="g-opt">简体中文</a>
+        <a href="#" class="g-opt">HK$ HKD - 港币</a>
+        <a href="#" class="g-opt">美国</a>
+      </div>
+    </div>
+  </div>
+  <!-- /Language, currency and region bar -->
+
+  <!-- Service links matrix: three rows of seven items plus one row of four items, all built with floats; each row is a cleared container -->
+  <div class="footer-services">
+    <div class="fs-matrix">
+      <div class="fs-row">
+
+      <a href="#" class="fs-item"><b>亚马逊音乐</b><p>畅听海量歌曲</p></a>
+
+      <a href="#" class="fs-item"><b>亚马逊广告</b><p>吸引买家<br>无论他们身在何处<br>消磨时光</p></a>
+
+      <a href="#" class="fs-item"><b>6pm</b><p>对时尚品牌<br>进行评分</p></a>
+
+      <a href="#" class="fs-item"><b>AbeBooks</b><p>图书、艺术<br>和收藏品</p></a>
+
+      <a href="#" class="fs-item"><b>ACX</b><p>有声读物出版<br>轻松实现</p></a>
+
+      <a href="#" class="fs-item"><b>我要开店</b><p>启动卖家账户</p></a>
+
+      <a href="#" class="fs-item last"><b>Veeqo</b><p>运输软件<br>库存管理</p></a>
+    </div>
+    <div class="fs-row">
+
+      <a href="#" class="fs-item"><b>亚马逊企业采购商</b><p>您的企业<br>所需的一切</p></a>
+
+      <a href="#" class="fs-item"><b>亚马逊海外购</b><p>配送订单<br>国际</p></a>
+
+      <a href="#" class="fs-item"><b>亚马逊云科技</b><p>可扩展云<br>计算服务</p></a>
+
+      <a href="#" class="fs-item"><b>Audible</b><p>下载<br>有声读物</p></a>
+
+      <a href="#" class="fs-item"><b>Box Office Mojo</b><p>查找电影<br>票房数据</p></a>
+
+      <a href="#" class="fs-item"><b>Goodreads</b><p>电子书书评<br>和建议</p></a>
+
+      <a href="#" class="fs-item last"><b>IMDb</b><p>电影、电视<br>和名人</p></a>
+    </div>
+    <div class="fs-row">
+
+      <a href="#" class="fs-item"><b>IMDbPro</b><p>获取娱乐信息<br>专业人士需要</p></a>
+
+      <a href="#" class="fs-item"><b>Kindle直接出版</b><p>独立数字出版<br>轻松实现</p></a>
+
+      <a href="#" class="fs-item"><b>Prime视频直接</b><p>视频分发<br>轻松实现</p></a>
+
+      <a href="#" class="fs-item"><b>Shopbop</b><p>设计师<br>时尚品牌</p></a>
+
+      <a href="#" class="fs-item"><b>Woot!</b><p>特惠商品和<br>恶作剧</p></a>
+
+      <a href="#" class="fs-item"><b>Zappos</b><p>鞋靴和<br>服装</p></a>
+
+      <a href="#" class="fs-item last"><b>Ring</b><p>智能家居安防系统</p></a>
+    </div>
+    <div class="fs-row alt">
+
+      <a href="#" class="fs-item first"><b>Eero WiFi</b><p>在每个房间播放4K<br>视频</p></a>
+
+      <a href="#" class="fs-item"><b>Blink</b><p>每个家庭的智能安防</p></a>
+
+      <a href="#" class="fs-item"><b>Neighbors App</b><p>实时犯罪<br>和安全警报</p></a>
+
+      <a href="#" class="fs-item last"><b>PillPack</b><p>药房已简化</p></a>
+    </div>
+    </div>
+  </div>
+  <!-- /Service links matrix -->
+
+  <!-- Legal links and copyright: normal flow, text centred -->
+  <div class="footer-legal">
+    <div class="links">
+      <a href="#">使用条件</a>
+      <a href="#">隐私声明条款</a>
+      <a href="#">消费者健康数据隐私披露</a>
+      <a href="#">您的广告隐私选择</a>
+    </div>
+    <p class="copy">©1996-2026, Amazon.com, Inc.或其附属公司</p>
+  </div>
+  <!-- /Legal links and copyright -->
+
+</footer>
+<!-- /Footer -->
+
+</div>
+<!-- /DevBox -->
+
+</body>
+</html>
