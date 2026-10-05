@@ -1,6 +1,6 @@
 # amazon
 
-Amazon homepage clone built with plain HTML and CSS (float and box model).
+Simulating the Amazon Homepage Layout (HTML + CSS) — Assignment Brief
 
 Student ID: 25532012
-Name: SHI Hau Yan
+Student Name: SHI Hau Yan
